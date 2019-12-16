@@ -26,7 +26,7 @@ test: default
 	@cd example
 	./../$(APP) "-c" "conf.gro" "min" "eq"
 	# Remove all except topology and conf
-	@ls -p | grep -v / | egrep -v "conf.gro|topol.top|rungmx.log" | xargs rm
+	@ls -p | grep -v / | egrep -v "conf.gro|topol.top" | xargs rm
 
 install: $(APP)
 	@$(INSTALL) $(APP) $(DIR)

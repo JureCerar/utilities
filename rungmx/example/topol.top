@@ -1,0 +1,49 @@
+[ defaults ]
+; nbfunc    comb-rule   gen-pairs
+  1         2           no
+
+[ atomtypes ]
+; name      bond_type    mass       charge   ptype   sigma        epsilon
+MW                      0.00000   0.000    D       0.00000e+00  0.00000e+00
+OW                     15.99940   0.000    A       3.15890e-01  7.74908e-01
+HW                      1.00800   0.000    A       0.00000e+00  0.00000e+00
+
+; Water topology
+[ moleculetype ]
+; molname    nrexcl
+  SOL        2
+
+[ atoms ]
+; nr type resnr residu atom cgnr charge
+  1  OW   1     SOL    OW   1     0.0000
+  2  HW   1     SOL    HW1  1     0.5564
+  3  HW   1     SOL    HW2  1     0.5564
+  4  MW   1     SOL    MW   1    -1.1128
+
+[ bonds ]
+; i     j     funct   length  force.c.
+  1     2     1       0.09572 502416.0
+  1     3     1       0.09572 502416.0
+
+[ angles ]
+; i   j   k   funct   angle   force.c.
+  2   1   3   1       104.52  628.02
+
+[ exclusions ]
+; i     j     k     l
+  1     2     3     4
+  2     1     3     4
+  3     1     2     4
+  4     1     2     3
+
+[ virtual_sites3 ]
+; Vsite from                    funct   a               b
+  4     1       2       3       1       0.13193777      0.13193777
+
+[ system ]
+; Name
+Water molecule
+
+[ molecules ]
+; Compound        #mols
+SOL                   1

@@ -1,0 +1,33 @@
+; -- RUN CONTROL --
+integrator               = md
+dt                       = 0.002  ;[ps]= 2 fs
+nsteps                   = 100
+
+; -- CONTINUATION --
+gen-vel                  = yes
+gen-temp                 = 300	
+
+; -- CONSTRAINTS --
+constraint-algorithm     = lincs
+constraints              = all-bonds
+lincs-warnangle          = 90 ;[deg]
+
+; -- NEIGHBOR SERCING --
+cutoff-scheme            = Verlet
+nstlist                  = 30
+
+; -- ELECTROSTATIC POTENTIAL --
+coulombtype              = PME
+rcoulomb                 = 1.4
+
+; -- VAN DER VAALS POTENTIAL --
+vdwtype                  = Cut-off
+rvdw                     = 1.4 ;[nm]
+DispCorr                 = EnerPres
+
+; -- THERMOSTATE -- 
+tcoupl                   = Nose-Hoover
+tc-grps                  = System
+tau-t                    = 3.0 ;[ps]
+ref-t                    = 300 ;[K]
+nh-chain-length          = 1
